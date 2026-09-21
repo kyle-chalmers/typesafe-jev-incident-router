@@ -6,6 +6,8 @@ import argparse
 import json
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from tools.clients import FixtureClient, ServiceUnavailable, TypeSafeAdapter
 from tools.models import Incident, RoutingDecision
 from tools.policy import REVIEW_QUEUE, decide
@@ -17,6 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_FIXTURES = ROOT / "data" / "fixtures" / "jev_responses.json"
 DEFAULT_REGISTRY = ROOT / "data" / "response_teams.json"
 DEFAULT_QUEUE = ROOT / ".local" / "review_queue.jsonl"
+
+load_dotenv(ROOT / ".env")
 
 
 def service_failure_decision(incident: Incident) -> RoutingDecision:

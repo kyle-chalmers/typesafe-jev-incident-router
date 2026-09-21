@@ -89,13 +89,19 @@ Review decisions are written to `.local/review_queue.jsonl` by default. The queu
 
 ## Make a live request
 
-Export your key in the current shell:
+Set your key, either in the current shell:
 
 ```bash
 export TYPESAFE_API_KEY="your-key"
 ```
 
-Run the same policy with the current TypeSafe model alias:
+or in a local `.env` file at the project root (gitignored, loaded automatically):
+
+```text
+TYPESAFE_API_KEY=your-key
+```
+
+A shell-exported value takes precedence over `.env` if both are set. Run the same policy with the current TypeSafe model alias:
 
 ```bash
 uv run python -m scripts.route_incident \
