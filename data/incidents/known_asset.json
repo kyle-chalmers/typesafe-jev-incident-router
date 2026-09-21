@@ -1,0 +1,7 @@
+{
+  "id": "inc_known_001",
+  "title": "Customer events ingestion delay",
+  "description": "The hourly ingestion job stopped after a warehouse permission error.",
+  "affected_asset": "customer_events_raw",
+  "business_context": "The operations dashboard will update late, but the team has a manual export."
+}

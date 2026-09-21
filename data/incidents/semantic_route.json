@@ -1,0 +1,7 @@
+{
+  "id": "inc_semantic_001",
+  "title": "Shared warehouse access failure",
+  "description": "Several ingestion jobs fail when they request temporary warehouse credentials.",
+  "affected_asset": "shared_ingestion_runtime",
+  "business_context": "Analysts can use yesterday's snapshot while the incident is investigated."
+}

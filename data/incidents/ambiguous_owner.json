@@ -1,0 +1,7 @@
+{
+  "id": "inc_ambiguous_001",
+  "title": "Executive revenue dashboard is stale",
+  "description": "The dashboard has not refreshed, and the report does not identify whether the failure began in the source, transformation, warehouse, or semantic layer.",
+  "affected_asset": "executive_revenue_dashboard",
+  "business_context": "The finance team can continue its review using the prior snapshot."
+}
