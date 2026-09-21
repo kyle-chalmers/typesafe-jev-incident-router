@@ -1,9 +1,9 @@
 .env
 .internal/
 .local/
+.ai-friend-review/
 .venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .DS_Store
-

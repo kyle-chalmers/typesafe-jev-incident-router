@@ -1,6 +1,8 @@
 # TypeSafe Jev Incident Router
 
-A small Python project that shows how a TypeSafe Jev decision can fit inside an operational workflow. The example routes synthetic data incidents while keeping exact facts, model judgments, application policy, and human review separate.
+> **Start here:** [TypeSafe Jev use cases for data teams](./docs/data-team-use-cases.md)
+
+This demonstration repository's main value is the TypeSafe Jev use-case guide, which covers practical ideas across data engineering, analytics engineering, data analytics, and data science. The runnable Python example shows how one of those ideas fits inside an operational workflow by routing synthetic data incidents while keeping exact facts, model judgments, application policy, and human review separate.
 
 The project uses all three TypeSafe answer types:
 
@@ -24,8 +26,6 @@ The selection rule is intentionally simple:
 4. Use human review when the consequence is high or the measured uncertainty crosses a tested threshold.
 
 These are selection heuristics, not capability boundaries. Generative models can return structured output, and Jev can be one component inside a larger system that also uses ChatGPT, Claude, or another model.
-
-For more ideas, see [TypeSafe Jev use cases for data teams](./docs/data-team-use-cases.md), with examples for data engineering, analytics engineering, data analytics, and data science.
 
 ## Why the registry comes first
 
