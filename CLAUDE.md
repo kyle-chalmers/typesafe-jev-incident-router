@@ -12,14 +12,14 @@ Intended users are data professionals and Python developers evaluating probabili
 
 - `uv sync`: install the pinned environment.
 - `uv run pytest -q`: run the offline test suite.
-- `uv run python scripts/route_incident.py --help`: inspect routing commands.
-- `uv run python scripts/evaluate_calibration.py --help`: inspect calibration metrics.
+- `uv run python -m scripts.route_incident --help`: inspect routing commands.
+- `uv run python -m scripts.evaluate_calibration --help`: inspect calibration metrics.
 
 ## Environment
 
 - Python 3.11 or newer.
 - `TYPESAFE_API_KEY` is required only for live requests.
-- Copy `.env.example` to `.env` for local configuration. Never commit `.env`.
+- Export `TYPESAFE_API_KEY` in the current shell or load it from a local `.env`. Never commit `.env`.
 - Concrete private values belong in `.internal/OWNER_CONFIG.md`.
 
 ## Code conventions
@@ -43,4 +43,3 @@ Intended users are data professionals and Python developers evaluating probabili
 ## Working principles
 
 Explain non-obvious design choices briefly. Fail safely when the service is unavailable. Keep sensitive data out of logs and fixtures. Verify results with commands and tests before reporting success.
-
