@@ -1,0 +1,19 @@
+[project]
+name = "typesafe-jev-incident-router"
+version = "0.1.0"
+description = "Confidence-gated incident routing with TypeSafe Jev"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "typesafe-sdk==0.7.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0,<9.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
