@@ -16,10 +16,6 @@ The opening example follows one business-critical pipeline failure through all t
 
 ![Pipeline incident moving through Score, Noul, Choice, and a human-led coding agent](./images/incident-decision-flow.png)
 
-The broader selection map separates exact rules, bounded judgments, generative work, and human review:
-
-![Decision flow from exact facts through Jev and Python policy](./images/decision-flow.png)
-
 The selection rule is intentionally simple:
 
 1. Use deterministic code when the input and rule are exact.
@@ -150,8 +146,6 @@ data/
 images/
   incident-decision-flow.excalidraw  editable incident example source
   incident-decision-flow.png         rendered incident example
-  decision-flow.excalidraw   editable diagram source
-  decision-flow.png          rendered decision map
 docs/
   data-team-use-cases.md      cross-disciplinary Jev use-case guide
   incident-routing-flow.md    implementation decision flow

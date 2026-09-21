@@ -127,22 +127,16 @@
 
 **Step 4:** Commit with `feat: add calibration worksheet metrics`.
 
-### Task 7: Create the technical diagram and finish documentation
+### Task 7: Finish documentation
 
 **Files:**
-- Create: `images/decision-flow.excalidraw`
-- Create: `images/decision-flow.png`
 - Modify: `README.md`
 
-**Step 1:** Build the diagram in sections using the KC AI Labs palette: selection heuristic, Jev evidence artifact, Python gate, and automatic or review outcomes.
+**Step 1:** Finish README setup, fixture commands, live command, policy explanation, privacy boundary, calibration guidance, and project structure.
 
-**Step 2:** Render, inspect, revise, brand, and re-render until text, arrows, and hierarchy are clean.
+**Step 2:** Validate every external README URL and fix any broken link.
 
-**Step 3:** Finish README setup, fixture commands, live command, policy explanation, privacy boundary, calibration guidance, and project structure. Embed the PNG where it explains the decision flow.
-
-**Step 4:** Validate every external README URL and fix any broken link.
-
-**Step 5:** Commit with `docs: explain the incident routing workflow`.
+**Step 3:** Commit with `docs: explain the incident routing workflow`.
 
 ### Task 8: Verify, audit, and prepare the clean project state
 
@@ -163,4 +157,3 @@
 **Step 5:** Reset runtime artifacts, confirm `git status --short` is clean, and commit any final public fixes with `chore: finalize incident router setup`.
 
 **Step 6:** Merge the implementation branch into local `main`. Create the public GitHub repository only after the explicit remote-write confirmation.
-
