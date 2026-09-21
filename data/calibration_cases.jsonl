@@ -1,0 +1,4 @@
+{"incident_reference":"cal_001","action":"assign","suggested_responder":"data_platform","correct_responder":"data_platform","minutes_to_correct_responder":0}
+{"incident_reference":"cal_002","action":"assign","suggested_responder":"business_intelligence","correct_responder":"analytics_engineering","minutes_to_correct_responder":45}
+{"incident_reference":"cal_003","action":"review","suggested_responder":"data_platform","correct_responder":"business_intelligence","minutes_to_correct_responder":12}
+{"incident_reference":"cal_004","action":"review","suggested_responder":"other_or_unknown","correct_responder":"source_application","minutes_to_correct_responder":18}
