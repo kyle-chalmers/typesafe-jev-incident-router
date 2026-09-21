@@ -13,6 +13,8 @@ from dotenv import load_dotenv
 from typesafe_sdk import Noul, RetryPolicy, TypeSafeClient
 
 
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_SOURCE = ROOT / "docs" / "data-team-use-cases.md"
 QUESTION_ID = "bounded_jev_role"
 QUESTION = (
     "Is Jev limited to a bounded semantic judgment in this proposed use case, "
@@ -43,6 +45,7 @@ class UseCase:
     title: str
     ask_jev: str
     keep_outside_jev: str
+    published_decision: str
 
 
 def parse_use_cases(markdown: str) -> list[UseCase]:
@@ -61,12 +64,16 @@ def parse_use_cases(markdown: str) -> list[UseCase]:
             cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
             if len(cells) != 4:
                 raise ValueError(f"expected four table columns: {line}")
+            published_decision = cells[3].lower()
+            if published_decision not in {"yes", "no"}:
+                raise ValueError(f"expected Yes or No Jev decision: {line}")
             cases.append(
                 UseCase(
                     discipline=discipline,
                     title=cells[0].replace("**", ""),
                     ask_jev=cells[1],
                     keep_outside_jev=cells[2],
+                    published_decision=published_decision,
                 )
             )
     return cases
@@ -97,22 +104,33 @@ def assess_use_cases(
         timeout=30.0,
     ) as client:
         for use_case in use_cases:
-            response = client.system_one(
-                state=build_state(use_case),
-                questions={
-                    QUESTION_ID: Noul(
-                        instructions=QUESTION,
-                        criteria=CRITERIA,
-                    )
-                },
-            )
+            try:
+                response = client.system_one(
+                    state=build_state(use_case),
+                    questions={
+                        QUESTION_ID: Noul(
+                            instructions=QUESTION,
+                            criteria=CRITERIA,
+                        )
+                    },
+                )
+            except Exception as exc:
+                results.append(
+                    {
+                        **asdict(use_case),
+                        "error": type(exc).__name__,
+                    }
+                )
+                continue
             resolved_models.add(response.model)
             probability = response.nouls[QUESTION_ID].noul
+            decision = "yes" if probability >= 0.5 else "no"
             results.append(
                 {
                     **asdict(use_case),
-                    "decision": "yes" if probability >= 0.5 else "no",
+                    "decision": decision,
                     "yes_probability": probability,
+                    "matches_published": decision == use_case.published_decision,
                 }
             )
     return {
@@ -132,7 +150,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--source",
         type=Path,
-        default=Path("docs/data-team-use-cases.md"),
+        default=DEFAULT_SOURCE,
         help="Markdown guide to assess.",
     )
     parser.add_argument("--model", default="jev-latest")
@@ -141,10 +159,15 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    load_dotenv(dotenv_path=Path(".env"))
+    load_dotenv(dotenv_path=ROOT / ".env")
     use_cases = parse_use_cases(args.source.read_text())
     assessment = assess_use_cases(use_cases, model=args.model)
     print(json.dumps(assessment, indent=2))
+    if any(
+        "error" in result or not result["matches_published"]
+        for result in assessment["results"]
+    ):
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

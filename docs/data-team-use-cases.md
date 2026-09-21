@@ -18,7 +18,7 @@ Use this guide to find places where a bounded semantic judgment can sit between 
 
 Authoritative facts come first in every example. Code owns calculations, thresholds, allowlists, and actions. Calibrate each judgment on representative labeled cases, preserve the returned probabilities, and route uncertain or consequential cases to review.
 
-`Jev decision` records a one-time live `bounded_jev_role: Noul` boundary check using the same question for every row: `Is Jev limited to a bounded semantic judgment in this proposed use case, with exact computation and consequential actions kept outside Jev?` Every row returned `Yes`, with yes-probabilities from 86% to 94%; this checks the Jev boundary rather than accuracy or rank.
+`Jev decision` records a live `bounded_jev_role: Noul` boundary check using the same question for every row: `Is Jev limited to a bounded semantic judgment in this proposed use case, with exact computation and consequential actions kept outside Jev?` Every row returned `Yes` across two runs on September 21, 2026, with yes-probabilities from 86% to 95%; this checks the Jev boundary rather than accuracy or rank.
 
 <details>
 <summary>How the Jev check was run</summary>

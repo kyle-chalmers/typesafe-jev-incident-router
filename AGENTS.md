@@ -16,7 +16,7 @@ Intended users are data professionals and Python developers evaluating probabili
 - `uv run pytest -q`: run the offline test suite.
 - `uv run python -m scripts.route_incident --help`: inspect routing commands.
 - `uv run python -m scripts.evaluate_calibration --help`: inspect calibration metrics.
-- `uv run python -m scripts.assess_use_case_boundaries`: reproduce the guide's live Jev boundary check.
+- `uv run python -m scripts.assess_use_case_boundaries`: repeat the guide's live Jev boundary check; requires `TYPESAFE_API_KEY` and makes billed API requests.
 
 ## Environment
 
