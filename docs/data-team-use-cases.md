@@ -20,6 +20,16 @@ Authoritative facts come first in every example. Code owns calculations, thresho
 
 `Jev decision` records a one-time live `Noul` boundary check using the same question for every row: `Is Jev limited to a bounded semantic judgment in this proposed use case, with exact computation and consequential actions kept outside Jev?` Every row returned `Yes`, with yes-probabilities from 87% to 95%; this checks the Jev boundary rather than accuracy or rank.
 
+<details>
+<summary>How the Jev check was run</summary>
+
+Each use case was evaluated separately. Its state contained the discipline, use-case title, `Ask Jev` text, and `Keep outside Jev` text. The run used `jev-latest`, which resolved to `jev-1.13.0` on September 21, 2026.
+
+- `true`: Jev evaluates messy or unstructured evidence using bounded typed answers, while code or people own exact facts, calculations, policy, and consequential actions.
+- `false`: Jev is asked to perform exact computation, create open-ended output, or directly authorize a consequential action.
+
+</details>
+
 ## Data engineering
 
 Run exact schema checks, data tests, reconciliations, registries, and permission checks before asking Jev about the language surrounding them.
