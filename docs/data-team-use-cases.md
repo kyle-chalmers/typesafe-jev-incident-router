@@ -18,15 +18,17 @@ Use this guide to find places where a bounded semantic judgment can sit between 
 
 Authoritative facts come first in every example. Code owns calculations, thresholds, allowlists, and actions. Calibrate each judgment on representative labeled cases, preserve the returned probabilities, and route uncertain or consequential cases to review.
 
-`Jev decision` records a one-time live `Noul` boundary check using the same question for every row: `Is Jev limited to a bounded semantic judgment in this proposed use case, with exact computation and consequential actions kept outside Jev?` Every row returned `Yes`, with yes-probabilities from 87% to 95%; this checks the Jev boundary rather than accuracy or rank.
+`Jev decision` records a one-time live `bounded_jev_role: Noul` boundary check using the same question for every row: `Is Jev limited to a bounded semantic judgment in this proposed use case, with exact computation and consequential actions kept outside Jev?` Every row returned `Yes`, with yes-probabilities from 86% to 94%; this checks the Jev boundary rather than accuracy or rank.
 
 <details>
 <summary>How the Jev check was run</summary>
 
 Each use case was evaluated separately. Its state contained the discipline, use-case title, `Ask Jev` text, and `Keep outside Jev` text. The run used `jev-latest`, which resolved to `jev-1.13.0` on September 21, 2026.
 
-- `true`: Jev evaluates messy or unstructured evidence using bounded typed answers, while code or people own exact facts, calculations, policy, and consequential actions.
-- `false`: Jev is asked to perform exact computation, create open-ended output, or directly authorize a consequential action.
+- `true` (shown as `Yes`): Jev evaluates messy or unstructured evidence using bounded typed answers, while code or people own exact facts, calculations, policy, and consequential actions.
+- `false` (shown as `No`): Jev is asked to perform exact computation, create open-ended output, or directly authorize a consequential action.
+
+Run `uv run python -m scripts.assess_use_case_boundaries` to repeat the assessment and print every row's full yes-probability as JSON. The command reads the guide and does not modify it; probabilities can change on a later run or model version.
 
 </details>
 
