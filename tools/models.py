@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from typing import Any, Mapping
 
 
@@ -68,3 +68,8 @@ class RoutingDecision:
     risk_flags: tuple[str, ...] = ()
     source: str = "policy"
 
+    def to_dict(self) -> dict[str, Any]:
+        value = asdict(self)
+        value["reasons"] = list(self.reasons)
+        value["risk_flags"] = list(self.risk_flags)
+        return value

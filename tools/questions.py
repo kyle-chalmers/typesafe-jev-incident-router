@@ -5,6 +5,7 @@ from typesafe_sdk import Choice, Noul, Score
 OWNER_CONFIDENCE_FLOOR = 0.75
 IMPACT_CONFIDENCE_FLOOR = 0.70
 CRITICAL_WORK_REVIEW = 0.70
+HIGH_IMPACT_SCORE = 2.0
 
 OWNER_CRITERIA = {
     "analytics_engineering": (
