@@ -128,6 +128,7 @@ def assess_use_cases(
             results.append(
                 {
                     **asdict(use_case),
+                    "model": response.model,
                     "decision": decision,
                     "yes_probability": probability,
                     "matches_published": decision == use_case.published_decision,
@@ -141,6 +142,13 @@ def assess_use_cases(
         "criteria": CRITERIA,
         "results": results,
     }
+
+
+def assessment_matches_published(assessment: dict[str, Any]) -> bool:
+    return all(
+        result.get("matches_published") is True
+        for result in assessment["results"]
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -163,10 +171,7 @@ def main() -> None:
     use_cases = parse_use_cases(args.source.read_text())
     assessment = assess_use_cases(use_cases, model=args.model)
     print(json.dumps(assessment, indent=2))
-    if any(
-        "error" in result or not result["matches_published"]
-        for result in assessment["results"]
-    ):
+    if not assessment_matches_published(assessment):
         raise SystemExit(1)
 
 

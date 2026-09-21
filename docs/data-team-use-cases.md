@@ -28,7 +28,7 @@ Each use case was evaluated separately. Its state contained the discipline, use-
 - `true` (shown as `Yes`): Jev evaluates messy or unstructured evidence using bounded typed answers, while code or people own exact facts, calculations, policy, and consequential actions.
 - `false` (shown as `No`): Jev is asked to perform exact computation, create open-ended output, or directly authorize a consequential action.
 
-Run `uv run python -m scripts.assess_use_case_boundaries` to repeat the assessment and print every row's full yes-probability as JSON. The command reads the guide and does not modify it; probabilities can change on a later run or model version.
+Run `uv run python -m scripts.assess_use_case_boundaries` to repeat the assessment and print every row's full yes-probability as JSON. The command reads the guide and does not modify it; probabilities can change on a later run or model version. It exits non-zero if an API request fails or a current decision differs from the published column.
 
 </details>
 
