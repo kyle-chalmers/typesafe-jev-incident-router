@@ -1,0 +1,105 @@
+{
+  "automatic": {
+    "model": "fixture-jev-1.13.0",
+    "owner": {
+      "choice": "data_platform",
+      "confidence": 0.91,
+      "probabilities": {
+        "analytics_engineering": 0.03,
+        "data_platform": 0.91,
+        "business_intelligence": 0.02,
+        "source_application": 0.02,
+        "other_or_unknown": 0.02
+      }
+    },
+    "impact": {
+      "score": 1.2,
+      "confidence": 0.82,
+      "probabilities": {"0": 0.05, "1": 0.7, "2": 0.2, "3": 0.05}
+    },
+    "critical_work": 0.2
+  },
+  "low_confidence": {
+    "model": "fixture-jev-1.13.0",
+    "owner": {
+      "choice": "data_platform",
+      "confidence": 0.39,
+      "probabilities": {
+        "analytics_engineering": 0.18,
+        "data_platform": 0.34,
+        "business_intelligence": 0.14,
+        "source_application": 0.13,
+        "other_or_unknown": 0.21
+      }
+    },
+    "impact": {
+      "score": 1.4,
+      "confidence": 0.8,
+      "probabilities": {"0": 0.04, "1": 0.58, "2": 0.3, "3": 0.08}
+    },
+    "critical_work": 0.24
+  },
+  "unknown_owner": {
+    "model": "fixture-jev-1.13.0",
+    "owner": {
+      "choice": "other_or_unknown",
+      "confidence": 0.81,
+      "probabilities": {
+        "analytics_engineering": 0.04,
+        "data_platform": 0.05,
+        "business_intelligence": 0.04,
+        "source_application": 0.06,
+        "other_or_unknown": 0.81
+      }
+    },
+    "impact": {
+      "score": 0.8,
+      "confidence": 0.78,
+      "probabilities": {"0": 0.3, "1": 0.62, "2": 0.06, "3": 0.02}
+    },
+    "critical_work": 0.12
+  },
+  "critical_risk": {
+    "model": "fixture-jev-1.13.0",
+    "owner": {
+      "choice": "data_platform",
+      "confidence": 0.9,
+      "probabilities": {
+        "analytics_engineering": 0.03,
+        "data_platform": 0.9,
+        "business_intelligence": 0.02,
+        "source_application": 0.03,
+        "other_or_unknown": 0.02
+      }
+    },
+    "impact": {
+      "score": 2.44,
+      "confidence": 0.78,
+      "probabilities": {"0": 0.01, "1": 0.08, "2": 0.37, "3": 0.54}
+    },
+    "critical_work": 0.94
+  },
+  "weak_impact": {
+    "model": "fixture-jev-1.13.0",
+    "owner": {
+      "choice": "analytics_engineering",
+      "confidence": 0.88,
+      "probabilities": {
+        "analytics_engineering": 0.88,
+        "data_platform": 0.04,
+        "business_intelligence": 0.03,
+        "source_application": 0.03,
+        "other_or_unknown": 0.02
+      }
+    },
+    "impact": {
+      "score": 1.8,
+      "confidence": 0.55,
+      "probabilities": {"0": 0.08, "1": 0.26, "2": 0.44, "3": 0.22}
+    },
+    "critical_work": 0.31
+  },
+  "api_error": {
+    "error": "timeout"
+  }
+}

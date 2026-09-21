@@ -28,6 +28,18 @@ class Incident:
             business_context=str(value["business_context"]),
         )
 
+    def to_state(self) -> dict[str, dict[str, str]]:
+        return {
+            "incident": {
+                "id": self.reference,
+                "title": self.title,
+                "description": self.description,
+                "affected_asset": self.affected_asset,
+                "business_context": self.business_context,
+            }
+        }
+
+
 @dataclass(frozen=True, slots=True)
 class ChoiceJudgment:
     choice: str
