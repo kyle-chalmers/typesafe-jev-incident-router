@@ -29,6 +29,8 @@ The selection rule is intentionally simple:
 
 These are selection heuristics, not capability boundaries. Generative models can return structured output, and Jev can be one component inside a larger system that also uses ChatGPT, Claude, or another model.
 
+For more ideas, see [TypeSafe Jev use cases for data teams](./docs/data-team-use-cases.md), with examples for data engineering, analytics engineering, data analytics, and data science.
+
 ## Why the registry comes first
 
 The sample registry maps known assets to response teams. When the incident names an asset with an authoritative owner, the router uses that fact and does not ask Jev to infer ownership. Jev still evaluates impact and whether critical work is blocked.
@@ -150,6 +152,10 @@ images/
   incident-decision-flow.png         rendered incident example
   decision-flow.excalidraw   editable diagram source
   decision-flow.png          rendered decision map
+docs/
+  data-team-use-cases.md      cross-disciplinary Jev use-case guide
+  incident-routing-flow.md    implementation decision flow
+  plans/                      design and implementation notes
 scripts/
   evaluate_calibration.py    calibration worksheet
   route_incident.py          command-line entry point
@@ -165,6 +171,7 @@ tests/                       offline behavior tests
 
 ## References
 
+- [Data-team use cases for Jev](./docs/data-team-use-cases.md)
 - [Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
 - [TypeSafe workflow evaluations](https://evals.typesafe.ai/)
 - [Jev is the fastest-adopted model in AI Gateway history](https://vercel.com/blog/ai-gateway-jev-model-launch)
