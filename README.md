@@ -12,6 +12,12 @@ The model supplies bounded judgments and their uncertainty. Python decides what 
 
 ## Decision flow
 
+The opening example follows one business-critical pipeline failure through all three TypeSafe answer types, then carries the typed decisions and original evidence into a human-led coding workflow.
+
+![Pipeline incident moving through Score, Noul, Choice, and a human-led coding agent](./images/incident-decision-flow.png)
+
+The broader selection map separates exact rules, bounded judgments, generative work, and human review:
+
 ![Decision flow from exact facts through Jev and Python policy](./images/decision-flow.png)
 
 The selection rule is intentionally simple:
@@ -140,6 +146,8 @@ data/
   incidents/                 synthetic incident inputs
   response_teams.json        authoritative asset-to-team registry
 images/
+  incident-decision-flow.excalidraw  editable incident example source
+  incident-decision-flow.png         rendered incident example
   decision-flow.excalidraw   editable diagram source
   decision-flow.png          rendered decision map
 scripts/
@@ -155,9 +163,11 @@ tools/
 tests/                       offline behavior tests
 ```
 
-## TypeSafe references
+## References
 
 - [Introducing System One Models and Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
+- [TypeSafe workflow evaluations](https://evals.typesafe.ai/)
+- [Jev is the fastest-adopted model in AI Gateway history](https://vercel.com/blog/ai-gateway-jev-model-launch)
 - [TypeSafe quick start](https://docs.typesafe.ai/introduction/quickstart)
 - [Primitives](https://docs.typesafe.ai/primitives)
 - [Confidence](https://docs.typesafe.ai/confidence)
